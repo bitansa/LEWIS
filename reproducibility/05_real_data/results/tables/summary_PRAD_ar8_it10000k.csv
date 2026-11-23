@@ -1,0 +1,2 @@
+"tag","n","p","n_edges","n_directed","n_non_gaussian","non_gaussian","n_gaussian","gaussian","agrees","against","within_tier","undirected","mass_D_hat","eps_alpha","acceptance","n_retained","ess_log_score","ess_edges","n_iter","burn_in","thin","agreeing_edges","against_edges"
+"PRAD_ar8_it10000k",462,8,14,14,7,"AR;FOXA1;HOXB13;KLK3;KLK2;TMPRSS2;NKX3-1",1,"FKBP5",5,2,7,0,0.351375,5,0.0145999,8000,3251.0010585138,1952.40117585572,10000000,2000000,1000,"FOXA1 -> TMPRSS2; FOXA1 -> NKX3-1; HOXB13 -> KLK3; HOXB13 -> NKX3-1; HOXB13 -> FKBP5","KLK2 -> AR; FKBP5 -> FOXA1"

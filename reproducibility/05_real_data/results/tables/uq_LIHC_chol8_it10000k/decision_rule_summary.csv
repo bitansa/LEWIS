@@ -1,0 +1,2 @@
+"tag","n","p","seed","alpha_ball","eps_alpha","M","n_distinct_dags","n_distinct_rpdags","acceptance_rate","mass_D_hat","mass_outside_ball","n_edges_D_hat","nG_hat","n_iter","burn_in","thin","runtime_s","ess_log_score","ess_edges"
+"LIHC_chol8_it10000k",348,8,1,0.05,7,8000,627,613,0.0550841,0.04075,0.02675,11,"HMGCS1;LDLR;SQLE;FDFT1;PCSK9",10000000,2000000,1000,585.14913892746,542.67903808189,577.557211947268

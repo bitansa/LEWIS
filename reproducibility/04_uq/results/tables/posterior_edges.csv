@@ -1,0 +1,9 @@
+"from","to","type","prob","prob_adjacent"
+"5","1","directed",0.500125,1
+"8","1","directed",0.498625,1
+"9","2","directed",1,1
+"10","2","directed",1,1
+"4","5","undirected",0.725,0.951125
+"5","6","directed",1,1
+"5","8","directed",0.993875,1
+"9","6","directed",1,1

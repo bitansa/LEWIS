@@ -1,0 +1,2 @@
+"tag","n","p","n_edges","n_directed","n_non_gaussian","non_gaussian","n_gaussian","gaussian","agrees","against","within_tier","undirected","mass_D_hat","eps_alpha","acceptance","n_retained","ess_log_score","ess_edges","n_iter","burn_in","thin","agreeing_edges","against_edges"
+"LIHC_chol8_it10000k",348,8,11,11,5,"HMGCS1;LDLR;SQLE;FDFT1;PCSK9",3,"SREBF2;HMGCR;INSIG1",2,1,8,0,0.04075,7,0.0550841,8000,542.67903808189,577.557211947268,10000000,2000000,1000,"SREBF2 -> HMGCS1; SREBF2 -> LDLR","SQLE -> SREBF2"

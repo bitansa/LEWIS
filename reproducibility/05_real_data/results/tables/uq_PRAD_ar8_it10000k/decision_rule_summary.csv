@@ -1,0 +1,2 @@
+"tag","n","p","seed","alpha_ball","eps_alpha","M","n_distinct_dags","n_distinct_rpdags","acceptance_rate","mass_D_hat","mass_outside_ball","n_edges_D_hat","nG_hat","n_iter","burn_in","thin","runtime_s","ess_log_score","ess_edges"
+"PRAD_ar8_it10000k",462,8,1,0.05,5,8000,144,144,0.0145999,0.351375,0.014,14,"AR;FOXA1;HOXB13;KLK3;KLK2;TMPRSS2;NKX3-1",10000000,2000000,1000,799.557139158249,3251.0010585138,1952.40117585572

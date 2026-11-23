@@ -1,0 +1,29 @@
+# Figures and LaTeX tables written by the plot scripts.
+figures/
+
+# Logs of the SLURM jobs.
+slurm/logs/
+
+# Datasets exported for MATLAB. The export scripts write them again.
+*/pairwise_lingam/inputs/
+
+# Files that the scripts write again: the list of the datasets of Figure 1
+# exported for MATLAB, and all rows of the comparative study in one file.
+01_motivation/pairwise_lingam/manifest.csv
+02_comparison/results/comparison_all.csv
+
+# Results of each dataset. They are in the Zenodo archive (see ZENODO.md).
+01_motivation/results/motivation_results.csv
+01_motivation/pairwise_lingam/outputs/
+02_comparison/results/results_*.csv
+02_comparison/pairwise_lingam/manifest.csv
+02_comparison/pairwise_lingam/outputs/
+03_calibration/results/*_sweep_results.csv
+04_uq/results/tables/samples_per_dag.csv
+04_uq/results/seed_sweep/seed_*/
+06_laplace_vs_exact/results/exact_vs_laplace.csv
+
+# Files of the operating system and of R.
+.DS_Store
+.Rhistory
+.RData

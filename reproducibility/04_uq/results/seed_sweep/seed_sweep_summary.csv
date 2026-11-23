@@ -1,0 +1,11 @@
+"seed","accept_rate","n_dags","n_rpdags","m_max","eps_alpha","shd_to_truth","truth_in_ball","n_buckets","nG_correct","dist_to_bench_median"
+1,0.0384,44,43,0.5149,3,9,FALSE,3,FALSE,7
+2,0.0642,32,24,0.4276,3,2,TRUE,4,FALSE,0
+3,0.0221,35,31,0.33,3,0,TRUE,4,TRUE,2
+4,0.0274,39,32,0.25,2,1,TRUE,4,TRUE,1
+5,0.0096,16,16,0.7509,1,2,FALSE,4,TRUE,0
+6,0.0172,31,24,0.808,9,2,TRUE,3,FALSE,0
+7,0.01,10,10,0.9014,1,1,TRUE,3,TRUE,1
+8,0.02,14,11,0.9086,3,4,FALSE,3,TRUE,2
+9,0.0304,37,31,0.6646,2,6,FALSE,3,TRUE,4
+10,0.0057,12,12,0.8849,1,0,TRUE,4,TRUE,2

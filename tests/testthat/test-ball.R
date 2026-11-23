@@ -1,0 +1,12 @@
+test_that("the credible ball radius is the right order statistic", {
+  d <- c(0, 0, 0, 1, 1, 2, 3, 5, 0, 0)
+  b <- .credible_ball(d, 0.2)
+  expect_identical(b$radius, 2L)
+  expect_equal(b$mass_outside, 0.2)
+  b <- .credible_ball(d, 0.05)
+  expect_identical(b$radius, 5L)
+  expect_equal(b$mass_outside, 0)
+  b <- .credible_ball(d, 0.5)
+  expect_identical(b$radius, 0L)
+  expect_equal(b$mass_outside, 0.5)
+})

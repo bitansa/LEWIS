@@ -1,0 +1,82 @@
+#' Gene expression of the androgen-receptor program in prostate cancer
+#'
+#' The preprocessed expression of 8 genes in 462 primary prostate tumors
+#' from The Cancer Genome Atlas (TCGA). These are the data of the prostate
+#' cancer analysis of the paper. The genes are
+#' the androgen receptor AR, the transcription factors FOXA1 and HOXB13,
+#' and 5 of their target genes, KLK3, KLK2, TMPRSS2, NKX3-1 and FKBP5.
+#'
+#' @format A numeric matrix with 462 rows and 8 columns. Each row is a
+#'   patient, and the row names are the TCGA sample barcodes. Each column
+#'   is a gene, in the order AR, FOXA1, HOXB13, KLK3, KLK2, TMPRSS2, NKX3-1
+#'   and FKBP5. Each value is the adjusted expression of a gene in a
+#'   sample. Each column has mean 0 and standard deviation 1.
+#'
+#' @details
+#' The data are RNA sequencing gene counts of primary tumors from the STAR
+#' pipeline with the GENCODE v36 annotation, as processed by the Genomic
+#' Data Commons (GDC, data release 40) and distributed by the UCSC Xena
+#' platform (GDC hub). The clinical data (release 41), the tumor purity
+#' estimated by ABSOLUTE and the sample quality annotations of the
+#' Pan-Cancer Atlas were also used. All these data are open access. The
+#' preprocessing has the following steps, as in the paper.
+#' \enumerate{
+#'   \item Samples. The primary tumors are kept, with one sample per
+#'     patient. The samples preserved in formalin and the samples flagged
+#'     as not to be used are removed.
+#'   \item Quality control. The library size of a sample is its total
+#'     count over all genes. A sample is removed if its library size is
+#'     below one quarter of the median, or more than 3 scaled median
+#'     absolute deviations above the median.
+#'   \item Normalization. The counts are scaled to the median library size
+#'     and transformed as \eqn{\log(1 + x)}{log(1 + x)}.
+#'   \item Covariate adjustment. The samples without age or tumor purity
+#'     are removed, which leaves 462 samples. Each gene is replaced by its
+#'     residual from a linear regression on age, tumor purity and tissue
+#'     source site. The sites with fewer than 10 samples are pooled.
+#'   \item Centering and scaling. Each gene is centered and scaled to unit
+#'     standard deviation.
+#' }
+#' Outlying values are not trimmed, because the non-Gaussianity of the
+#' errors is what orients the edges.
+#'
+#' The data are already centered. Use `center = FALSE` in [lewis()] to fit
+#' LEWIS to exactly these values, as in the paper. The paper runs the chain
+#' for \eqn{10^7}{10^7} iterations (`n_iter = 1e7`), keeps 8000 draws and
+#' checks convergence with several chains, because shorter chains started
+#' from different graphs did not agree on these data.
+#'
+#' @source The Cancer Genome Atlas, open-access data from the UCSC Xena
+#'   platform, GDC hub (<https://xenabrowser.net/>).
+#'
+#' @references
+#' Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
+#' DAG selection for Bayesian Causal Discovery under general error
+#' distributions. Manuscript.
+#'
+#' Goldman, M. J., Craft, B., Hastie, M., Repecka, K., McDade, F., Kamath,
+#' A., Banerjee, A., Luo, Y., Rogers, D., Brooks, A. N., Zhu, J. and
+#' Haussler, D. (2020). Visualizing and interpreting cancer genomics data
+#' via the Xena platform. Nature Biotechnology, 38, 675-678.
+#'
+#' @seealso [lewis()]
+#'
+#' @examples
+#' dim(tcga_prostate)
+#' colnames(tcga_prostate)
+#' head(tcga_prostate[, 1:4])
+#'
+#' \donttest{
+#' # A short chain, for illustration only. The paper uses 10^7 iterations
+#' # (n_iter = 1e7) and checks convergence with several chains. A short
+#' # chain may give a warning about the effective sample size.
+#' fit <- lewis(tcga_prostate, n_iter = 20000, center = FALSE, seed = 1)
+#' fit
+#' fit$nodes
+#' }
+#'
+#' @docType data
+#' @name tcga_prostate
+#' @usage tcga_prostate
+#' @keywords datasets
+NULL

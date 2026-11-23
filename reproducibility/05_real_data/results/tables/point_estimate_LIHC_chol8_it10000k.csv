@@ -1,0 +1,12 @@
+"edge","i","j","gene_i","gene_j","status_in_D_hat","known_order","p_status_in_D_hat","recurrence","p_adjacent","p_i_to_j","p_j_to_i","p_undirected"
+"SREBF2 -> HMGCS1",1,3,"SREBF2","HMGCS1","i->j","agrees",0.9805,1,0.98075,0.9805,0.00025,0
+"SREBF2 -> LDLR",1,4,"SREBF2","LDLR","i->j","agrees",0.545375,1,0.569,0.545375,0.023125,5e-04
+"SQLE -> SREBF2",1,5,"SREBF2","SQLE","j->i","against",1,1,1,0,1,0
+"HMGCS1 -> HMGCR",2,3,"HMGCR","HMGCS1","j->i","within tier",0.889875,1,1,0.10975,0.889875,0.000375
+"SQLE -> HMGCR",2,5,"HMGCR","SQLE","j->i","within tier",0.999875,1,1,0,0.999875,0.000125
+"HMGCR -> FDFT1",2,7,"HMGCR","FDFT1","i->j","within tier",0.979625,1,0.999875,0.979625,0.020125,0.000125
+"HMGCS1 -> LDLR",3,4,"HMGCS1","LDLR","i->j","within tier",0.802875,1,0.95475,0.802875,0.151875,0
+"SQLE -> HMGCS1",3,5,"HMGCS1","SQLE","j->i","within tier",0.904625,1,0.904625,0,0.904625,0
+"INSIG1 -> HMGCS1",3,6,"HMGCS1","INSIG1","j->i","within tier",0.90525,1,0.991375,0.086125,0.90525,0
+"SQLE -> PCSK9",5,8,"SQLE","PCSK9","i->j","within tier",0.99625,1,0.996375,0.99625,0.000125,0
+"PCSK9 -> INSIG1",6,8,"INSIG1","PCSK9","j->i","within tier",0.999875,1,0.999875,0,0.999875,0

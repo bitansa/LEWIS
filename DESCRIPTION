@@ -1,0 +1,66 @@
+Package: LEWIS
+Type: Package
+Title: Consistent DAG Selection for Bayesian Causal Discovery
+Version: 0.1.0
+Authors@R: c(
+    person("Anamitra", "Chaudhuri", role = "aut"),
+    person("Anirban", "Bhattacharya", role = "aut"),
+    person("Yang", "Ni", role = "aut"),
+    person("Bitan", "Sarkar", role = c("aut", "cre"),
+           email = "bitansarkar010899@gmail.com"),
+    person("R Core Team", role = "cph",
+           comment = "Shapiro-Wilk code from R's file swilk.c"),
+    person("Roger", "Koenker", role = "cph",
+           comment = "Fortran routines rqbr and rqfnb from the package quantreg"),
+    person("Mingyang", "Ren", role = "cph",
+           comment = "TL code from the package TransGraph"),
+    person("Ruixuan", "Zhao", role = "cph",
+           comment = "TL code from the package TransGraph"),
+    person("Xin", "He", role = "cph",
+           comment = "TL code from the package TransGraph"),
+    person("Junhui", "Wang", role = "cph",
+           comment = "TL code from the package TransGraph")
+    )
+Description: Learns a directed acyclic graph (DAG) from observational data
+    that follow a linear structural equation model. Each error may be
+    Gaussian or a Gaussian scale mixture. The method needs neither the
+    error distributions nor the identities of the nodes with non-Gaussian
+    errors. The method, called LEWIS (Laplace Error Working model for
+    Inference and Selection of DAG), uses a Laplace working likelihood at
+    every node, a complexity prior on the graph and a Laplace approximation
+    of the marginal likelihood. DAGs are sampled with a Metropolis-Hastings
+    algorithm. The draws are summarized by a point estimate of the
+    distribution equivalence class, a credible ball and posterior
+    probabilities of edges and of non-Gaussian errors. The point estimate
+    is a restricted partially directed acyclic graph. The package includes
+    gene expression data of the androgen-receptor program in prostate
+    cancer from The Cancer Genome Atlas.
+License: GPL-2
+URL: https://github.com/bitansa/LEWIS
+BugReports: https://github.com/bitansa/LEWIS/issues
+Depends:
+    R (>= 4.1.0)
+Imports:
+    dcov,
+    graphics,
+    huge,
+    MASS,
+    Rcpp,
+    stats,
+    utils
+LinkingTo:
+    Rcpp
+Suggests:
+    igraph,
+    knitr,
+    pcalg,
+    quantreg,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+LazyData: true
+Config/testthat/edition: 3
+Encoding: UTF-8
+Language: en-US
+Roxygen: list(markdown = TRUE)
+Config/roxygen2/version: 8.1.1

@@ -1,0 +1,226 @@
+---
+title: "Introduction to LEWIS"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to LEWIS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>", fig.width = 6, fig.height = 4.5)
+```
+
+## The model
+
+LEWIS (Laplace Error Working model for Inference and Selection of DAG)
+learns a directed acyclic graph (DAG) from data in which each variable is
+a linear function of its parents plus an independent error. Some errors
+may be Gaussian and others non-Gaussian. LEWIS uses a Laplace error working
+model and a complexity prior on the DAG. It samples DAGs from an
+approximate posterior and then estimates the distribution equivalence
+class of the DAG. This class is represented by a restricted partially
+directed acyclic graph (RPDAG). An edge of the RPDAG is directed when the
+data determine its direction, and undirected otherwise.
+
+The method is described in Chaudhuri, Bhattacharya, Ni and Sarkar (2026),
+"Consistent DAG selection for Bayesian Causal Discovery under general error
+distributions", manuscript.
+
+## A simulated example
+
+We simulate 500 observations of 6 variables from the DAG
+x1 -> x2, x1 -> x3, x2 -> x4, x3 -> x4, x4 -> x5, x5 -> x6.
+The errors of x1, x4 and x5 are Laplace. The errors of x2, x3 and x6 are
+Gaussian.
+
+```{r data}
+library(LEWIS)
+
+set.seed(2025)
+n <- 500
+laplace <- function(n) (rexp(n) - rexp(n)) / sqrt(2)
+x1 <- laplace(n)
+x2 <- 0.8 * x1 + rnorm(n)
+x3 <- -0.7 * x1 + rnorm(n)
+x4 <- 0.6 * x2 + 0.6 * x3 + laplace(n)
+x5 <- 0.8 * x4 + laplace(n)
+x6 <- 0.7 * x5 + rnorm(n)
+X <- cbind(x1, x2, x3, x4, x5, x6)
+```
+
+The true RPDAG follows from the true DAG and the set of nodes with
+non-Gaussian errors.
+
+```{r truth}
+true_dag <- matrix(0, 6, 6, dimnames = list(colnames(X), colnames(X)))
+true_dag["x1", "x2"] <- 1
+true_dag["x1", "x3"] <- 1
+true_dag["x2", "x4"] <- 1
+true_dag["x3", "x4"] <- 1
+true_dag["x4", "x5"] <- 1
+true_dag["x5", "x6"] <- 1
+true_rpdag <- rpdag(true_dag, nG = c("x1", "x4", "x5"))
+true_rpdag
+```
+
+## Fitting LEWIS
+
+The default settings are those of the paper: the complexity prior with
+`d = 0.03` and `alpha = 0.75`, a start at the estimate of the TL method,
+10,000 iterations for up to 20 variables, a burn-in of 20 percent, at most
+8000 kept draws, the Shapiro-Wilk level 0.05 / p and the 95 percent
+credible ball.
+
+```{r fit}
+fit <- lewis(X, seed = 1)
+fit
+```
+
+The point estimate `D_hat` is an RPDAG. `D_hat[i, j] = 1` and
+`D_hat[j, i] = 0` means the edge i -> j. A pair with both entries equal to 1
+is an undirected edge. A pair with both entries equal to 0 has no edge.
+
+```{r dhat}
+fit$D_hat
+shd(fit$D_hat, true_rpdag)
+```
+
+## The edges and the nodes
+
+For each edge of the point estimate, `prob` is the posterior probability
+that the edge has the same status as in `D_hat`, and `prob_adjacent` is the
+posterior probability that the two nodes are adjacent.
+
+```{r edges}
+fit$edges
+```
+
+For each node, `prob_nongaussian` is the proportion of draws in which its
+error is declared non-Gaussian.
+
+```{r nodes}
+fit$nodes
+```
+
+## The shape of the posterior and the credible ball
+
+The table `graphs` lists the distinct RPDAGs of the kept draws, in
+decreasing order of posterior mass. Each graph is compared with `D_hat`.
+Its class is identical, upper (every edge of `D_hat` is in the graph with
+the same status), lower (every edge of the graph is in `D_hat` with the
+same status) or rearranged (otherwise).
+
+```{r graphs}
+head(fit$graphs[, c("rank", "mass", "class", "shd", "added", "removed", "reversed")])
+```
+
+The 95 percent credible ball holds every graph within SHD `radius` of
+`D_hat`.
+
+```{r ball}
+fit$ball
+summary(fit)
+```
+
+## Plots
+
+```{r plots, fig.height = 5}
+plot(fit)                 # the point estimate
+plot(fit, type = "ball")  # posterior mass by SHD from the point estimate
+plot(fit, type = "edges") # posterior probabilities of the edges
+```
+
+## Changing the settings
+
+The uniform prior on DAGs is obtained with `d = 0`.
+
+```{r uniform}
+fit_uniform <- lewis(X, d = 0, n_iter = 4000, seed = 1)
+fit_uniform$D_hat
+```
+
+The chain can start at the empty graph, or at any DAG given as an adjacency
+matrix with the parents in the rows.
+
+```{r start}
+fit_empty <- lewis(X, start = "empty", n_iter = 4000, seed = 1)
+fit_true <- lewis(X, start = true_dag, n_iter = 4000, seed = 1)
+shd(fit_empty$D_hat, fit_true$D_hat)
+```
+
+The number of iterations is set with `n_iter`. The burn-in fraction and the
+largest number of kept draws are set with `burn_in` and `max_draws`.
+`max_draws = Inf` keeps every draw after the burn-in. `lewis_schedule()`
+shows the schedule for a given number of variables.
+
+```{r schedule}
+lewis_schedule(6)
+lewis_schedule(50)
+lewis_schedule(6, n_iter = 20000, max_draws = Inf)
+```
+
+## Checking convergence
+
+The trace of the score should show no trend after the burn-in.
+
+```{r trace}
+plot(fit, type = "trace")
+fit$diagnostics$ess_log_score
+```
+
+LEWIS gives a warning when the effective sample size of the score is below
+`ess_min` (100 by default). With `n_chains = 2` or more, further chains
+start at the empty graph and at the TL estimate. LEWIS then reports the
+potential scale reduction factor of the score and of the number of edges,
+and the largest difference between the chains in the posterior
+probabilities of adjacencies and orientations. It gives a warning when a
+potential scale reduction factor is above 1.05 or a difference is above
+0.1.
+
+```{r chains}
+fit2 <- lewis(X, n_chains = 2, seed = 1)
+fit2$diagnostics[c("psrf_log_score", "psrf_n_edges",
+                   "max_diff_adjacency", "max_diff_orientation")]
+```
+
+If a warning appears, increase `n_iter` and run the chains again.
+
+## A real-data example
+
+The data set `tcga_prostate` contains the data of the prostate cancer
+analysis of the paper: the expression of 8 genes of the androgen-receptor
+program in 462 primary prostate tumors from The Cancer Genome Atlas. The
+genes are the androgen receptor AR, the transcription factors FOXA1 and
+HOXB13, and 5 of their target genes. Each gene is adjusted for age, tumor
+purity and tissue source site, centered and scaled (see `?tcga_prostate`).
+
+```{r tcga-data}
+dim(tcga_prostate)
+colnames(tcga_prostate)
+```
+
+The data are already centered, so we use `center = FALSE`, as in the
+paper. To keep this vignette fast, we run a short chain of 20,000
+iterations. This is for illustration only. The paper uses $10^7$
+iterations (`n_iter = 1e7`) and checks convergence with several chains,
+because shorter chains started from different graphs did not agree on these
+data. A short chain may therefore give a warning about the effective
+sample size.
+
+```{r tcga-fit}
+fit_tcga <- lewis(tcga_prostate, n_iter = 20000, center = FALSE, seed = 1)
+fit_tcga
+fit_tcga$nodes
+```
+
+```{r tcga-plot, fig.height = 5}
+plot(fit_tcga)
+```
+
+For a real analysis, run the chain of the paper and check convergence:
+
+```{r tcga-long, eval = FALSE}
+fit_long <- lewis(tcga_prostate, n_iter = 1e7, center = FALSE, n_chains = 2,
+                  seed = 1)
+```

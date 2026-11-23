@@ -1,0 +1,8 @@
+# The TCGA files that download_tcga.R downloads.
+data/raw/
+
+# The analyses of the optional screen of the 18 gene sets.
+screen/
+
+# The logs of run_reported_analyses.R.
+results/logs/

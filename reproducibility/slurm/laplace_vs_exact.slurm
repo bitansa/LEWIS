@@ -1,0 +1,50 @@
+#!/bin/bash
+# =============================================================================
+# laplace_vs_exact.slurm
+#
+# Accuracy of the Laplace approximation (Appendix F, Table 1). Runs the
+# Laplace chain and the exact chain on 13 pairs (p, n), 100 datasets each,
+# with both priors. Writes 06_laplace_vs_exact/results/exact_vs_laplace.csv.
+# Needs a C++ compiler. About 55 CPU hours, that is about 1 hour on 100
+# cores.
+#
+# Submit from the root of the repository (the folder that contains
+# reproducibility/). Create the folder of the logs once before the first
+# job:
+#     mkdir -p reproducibility/slurm/logs
+#     sbatch reproducibility/slurm/laplace_vs_exact.slurm
+#
+# Without SLURM, run the same command from the root of the repository:
+#     MC_CORES=8 Rscript reproducibility/06_laplace_vs_exact/laplace_vs_exact.R
+# MC_CORES is the number of datasets run at the same time. Without it,
+# all cores but one are used.
+#
+# Edit the partition, modules and resources for your cluster. The values
+# below are those used for the paper.
+# =============================================================================
+#SBATCH --job-name=lve
+#SBATCH --output=reproducibility/slurm/logs/%x_%j.out
+#SBATCH --error=reproducibility/slurm/logs/%x_%j.err
+#SBATCH --time=2-00:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=100
+#SBATCH --mem=128G
+# To choose a partition, remove the first # of the next line and edit it.
+##SBATCH --partition=<partition>
+
+# Stop at the first error.
+set -eo pipefail
+
+# Load R. Edit the module name for your cluster.
+module load R
+
+# Run one dataset per core, with single-threaded linear algebra.
+export MC_CORES="${SLURM_CPUS_PER_TASK:-1}"
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+
+# Run the script from the root of the repository.
+cd "$SLURM_SUBMIT_DIR"
+Rscript reproducibility/06_laplace_vs_exact/laplace_vs_exact.R

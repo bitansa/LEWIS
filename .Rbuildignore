@@ -1,0 +1,12 @@
+^README\.Rmd$
+^\.github$
+^reproducibility$
+^cran-comments\.md$
+^LICENSE\.md$
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.gitignore$
+^doc$
+^Meta$
+(^|/)\.DS_Store$
+^data-raw$

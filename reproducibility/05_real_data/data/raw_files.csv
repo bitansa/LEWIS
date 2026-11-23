@@ -1,0 +1,17 @@
+file,needed_for,bytes,md5,url
+TCGA-PRAD.star_counts.tsv.gz,reported,61509418,d667088f959294e78ee0146c104481c1,https://gdc.xenahubs.net/download/TCGA-PRAD.star_counts.tsv.gz
+TCGA-PRAD.clinical.tsv.gz,reported,126321,04c5bd9d725fb04acfc1e7d0a96b25db,https://gdc.xenahubs.net/download/TCGA-PRAD.clinical.tsv.gz
+TCGA-LIHC.star_counts.tsv.gz,reported,40827323,fd9f52096611fef6dc8afe5e200864fd,https://gdc.xenahubs.net/download/TCGA-LIHC.star_counts.tsv.gz
+TCGA-LIHC.clinical.tsv.gz,reported,94749,6ae4aad0bc209252e69134e348b547e3,https://gdc.xenahubs.net/download/TCGA-LIHC.clinical.tsv.gz
+gencode.v36.annotation.gtf.gene.probemap,reported,3206945,59d24b459af04b543cf1d5d4161a98fc,https://gdc.xenahubs.net/download/gencode.v36.annotation.gtf.gene.probemap
+TCGA_mastercalls.abs_tables_JSedit.fixed.txt,reported,901812,8ea2ca92c8ae58350538999dfa1174da,https://api.gdc.cancer.gov/data/4f277128-f793-4354-a13d-30cc7fe9f6b5
+merged_sample_quality_annotations.tsv,reported,8463670,05ddd2270fb1fb24fbdc2fe9bf7384e5,https://api.gdc.cancer.gov/data/1a7d7be8-675d-4e60-a105-19d4121bdebf
+TCGASubtype.20170308.tsv.gz,reported,45121,b1d07433e6009878ef2d3a14526535cb,https://pancanatlas.xenahubs.net/download/TCGASubtype.20170308.tsv.gz
+TCGA-BRCA.star_counts.tsv.gz,screen,138503699,9be24834ef72c439065523c519c6ea09,https://gdc.xenahubs.net/download/TCGA-BRCA.star_counts.tsv.gz
+TCGA-BRCA.clinical.tsv.gz,screen,280146,7204a20f7303fab989f7071d1f284803,https://gdc.xenahubs.net/download/TCGA-BRCA.clinical.tsv.gz
+TCGA-KIRC.star_counts.tsv.gz,screen,71515022,18551451e7f8843b42c0deb742b8d729,https://gdc.xenahubs.net/download/TCGA-KIRC.star_counts.tsv.gz
+TCGA-KIRC.clinical.tsv.gz,screen,156680,9e47712435e32bc54248723d074827d8,https://gdc.xenahubs.net/download/TCGA-KIRC.clinical.tsv.gz
+TCGA-LUAD.star_counts.tsv.gz,screen,66495260,c6520a0ddcbd96e013b8a114e2309d63,https://gdc.xenahubs.net/download/TCGA-LUAD.star_counts.tsv.gz
+TCGA-LUAD.clinical.tsv.gz,screen,149532,61d13a57f89a9ff45ce63121d89f2157,https://gdc.xenahubs.net/download/TCGA-LUAD.clinical.tsv.gz
+TCGA-STAD.star_counts.tsv.gz,screen,57991361,d1ae1fa496a9fbaef336cf031edbbb4e,https://gdc.xenahubs.net/download/TCGA-STAD.star_counts.tsv.gz
+TCGA-STAD.clinical.tsv.gz,screen,111060,fa5b541174dbd75ee97f785fdfa4859c,https://gdc.xenahubs.net/download/TCGA-STAD.clinical.tsv.gz

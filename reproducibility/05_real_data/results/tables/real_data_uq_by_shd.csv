@@ -1,0 +1,31 @@
+"shd_to_Dhat","category","mass","panel","eps"
+0,"identical",0.351375,"(a) Prostate cancer, androgen-receptor program",5
+1,"upper",0.065375,"(a) Prostate cancer, androgen-receptor program",5
+1,"lower",0.029,"(a) Prostate cancer, androgen-receptor program",5
+1,"rearranged",0.00575,"(a) Prostate cancer, androgen-receptor program",5
+2,"upper",0.00275,"(a) Prostate cancer, androgen-receptor program",5
+2,"lower",0.000625,"(a) Prostate cancer, androgen-receptor program",5
+2,"rearranged",0.118625,"(a) Prostate cancer, androgen-receptor program",5
+3,"rearranged",0.280875,"(a) Prostate cancer, androgen-receptor program",5
+4,"rearranged",0.082125,"(a) Prostate cancer, androgen-receptor program",5
+5,"rearranged",0.0495,"(a) Prostate cancer, androgen-receptor program",5
+6,"rearranged",0.01275,"(a) Prostate cancer, androgen-receptor program",5
+7,"rearranged",0.00125,"(a) Prostate cancer, androgen-receptor program",5
+0,"identical",0.04075,"(b) Liver cancer, SREBP-2 cholesterol program",7
+1,"upper",0.06475,"(b) Liver cancer, SREBP-2 cholesterol program",7
+1,"lower",0.1595,"(b) Liver cancer, SREBP-2 cholesterol program",7
+2,"upper",0.11925,"(b) Liver cancer, SREBP-2 cholesterol program",7
+2,"rearranged",0.176625,"(b) Liver cancer, SREBP-2 cholesterol program",7
+3,"upper",0.085375,"(b) Liver cancer, SREBP-2 cholesterol program",7
+3,"rearranged",0.0835,"(b) Liver cancer, SREBP-2 cholesterol program",7
+4,"upper",0.03475,"(b) Liver cancer, SREBP-2 cholesterol program",7
+4,"rearranged",0.07525,"(b) Liver cancer, SREBP-2 cholesterol program",7
+5,"upper",0.003875,"(b) Liver cancer, SREBP-2 cholesterol program",7
+5,"rearranged",0.0585,"(b) Liver cancer, SREBP-2 cholesterol program",7
+6,"rearranged",0.038125,"(b) Liver cancer, SREBP-2 cholesterol program",7
+7,"rearranged",0.033,"(b) Liver cancer, SREBP-2 cholesterol program",7
+8,"rearranged",0.014625,"(b) Liver cancer, SREBP-2 cholesterol program",7
+9,"rearranged",0.00725,"(b) Liver cancer, SREBP-2 cholesterol program",7
+10,"rearranged",0.00425,"(b) Liver cancer, SREBP-2 cholesterol program",7
+11,"rearranged",0.000375,"(b) Liver cancer, SREBP-2 cholesterol program",7
+12,"rearranged",0.00025,"(b) Liver cancer, SREBP-2 cholesterol program",7

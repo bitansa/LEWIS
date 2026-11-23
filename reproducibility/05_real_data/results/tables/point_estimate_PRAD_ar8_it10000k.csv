@@ -1,0 +1,15 @@
+"edge","i","j","gene_i","gene_j","status_in_D_hat","known_order","p_status_in_D_hat","recurrence","p_adjacent","p_i_to_j","p_j_to_i","p_undirected"
+"FOXA1 -> AR",1,2,"AR","FOXA1","j->i","within tier",1,1,1,0,1,0
+"KLK2 -> AR",1,5,"AR","KLK2","j->i","against",0.99725,1,0.99725,0,0.99725,0
+"HOXB13 -> FOXA1",2,3,"FOXA1","HOXB13","j->i","within tier",0.561875,1,0.561875,0,0.561875,0
+"FOXA1 -> TMPRSS2",2,6,"FOXA1","TMPRSS2","i->j","agrees",1,1,1,1,0,0
+"FOXA1 -> NKX3-1",2,7,"FOXA1","NKX3-1","i->j","agrees",0.547375,1,1,0.547375,0.452625,0
+"FKBP5 -> FOXA1",2,8,"FOXA1","FKBP5","j->i","against",0.6165,1,0.617875,0.001375,0.6165,0
+"HOXB13 -> KLK3",3,4,"HOXB13","KLK3","i->j","agrees",1,1,1,1,0,0
+"HOXB13 -> NKX3-1",3,7,"HOXB13","NKX3-1","i->j","agrees",1,1,1,1,0,0
+"HOXB13 -> FKBP5",3,8,"HOXB13","FKBP5","i->j","agrees",0.963875,1,0.963875,0.963875,0,0
+"KLK3 -> KLK2",4,5,"KLK3","KLK2","i->j","within tier",1,1,1,1,0,0
+"KLK3 -> TMPRSS2",4,6,"KLK3","TMPRSS2","i->j","within tier",1,1,1,1,0,0
+"KLK3 -> FKBP5",4,8,"KLK3","FKBP5","i->j","within tier",0.844625,1,0.84625,0.844625,0.001625,0
+"FKBP5 -> TMPRSS2",6,8,"TMPRSS2","FKBP5","j->i","within tier",0.938875,1,0.938875,0,0.938875,0
+"FKBP5 -> NKX3-1",7,8,"NKX3-1","FKBP5","j->i","within tier",0.99925,1,0.999625,0.000375,0.99925,0

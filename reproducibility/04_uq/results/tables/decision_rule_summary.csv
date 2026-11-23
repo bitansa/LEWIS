@@ -1,0 +1,2 @@
+"seed","p","n","nG_star","n_iter","burn_in","thin","M","acceptance_rate","distinct_dags","distinct_rpdags","distinct_nG_hat","D_hat_edges","D_hat_mean_shd","nG_hat","eps_alpha","shd_Dhat_truth","truth_in_ball_shd","median_shd_sample_truth","alpha_ball","m_max","dispersion_class"
+2,10,500,"1,2,3,7,10",10000,2000,1,8000,0.0642,32,24,3,8,1.372,"1,2,3,7,8,10",3,2,TRUE,3,0.05,0.4276,"concentrated (>35%)"
