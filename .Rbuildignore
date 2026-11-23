@@ -10,3 +10,4 @@
 ^Meta$
 (^|/)\.DS_Store$
 ^data-raw$
+^CRAN-SUBMISSION$
