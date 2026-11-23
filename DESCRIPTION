@@ -23,18 +23,20 @@ Authors@R: c(
     )
 Description: Learns a directed acyclic graph (DAG) from observational data
     that follow a linear structural equation model. Each error may be
-    Gaussian or a Gaussian scale mixture. The method needs neither the
-    error distributions nor the identities of the nodes with non-Gaussian
-    errors. The method, called LEWIS (Laplace Error Working model for
-    Inference and Selection of DAG), uses a Laplace working likelihood at
-    every node, a complexity prior on the graph and a Laplace approximation
-    of the marginal likelihood. DAGs are sampled with a Metropolis-Hastings
+    Gaussian or a Gaussian scale mixture. The method needs neither the error
+    distributions nor the identities of the nodes with non-Gaussian errors.
+    The method, called LEWIS (Laplace Error Working model for Inference and
+    Selection of DAG), uses a Laplace working likelihood at every node, a
+    complexity prior on the graph and a Laplace approximation of the
+    marginal likelihood. Under mild conditions, the posterior probability of
+    the distribution equivalence class of the true DAG tends to one as the
+    sample size grows. DAGs are sampled with a Metropolis-Hastings
     algorithm. The draws are summarized by a point estimate of the
     distribution equivalence class, a credible ball and posterior
-    probabilities of edges and of non-Gaussian errors. The point estimate
-    is a restricted partially directed acyclic graph. The package includes
-    gene expression data of the androgen-receptor program in prostate
-    cancer from The Cancer Genome Atlas.
+    probabilities of edges and of non-Gaussian errors. The point estimate is
+    a restricted partially directed acyclic graph. The package includes gene
+    expression data of the androgen-receptor program in prostate cancer from
+    The Cancer Genome Atlas.
 License: GPL-2
 URL: https://github.com/bitansa/LEWIS
 BugReports: https://github.com/bitansa/LEWIS/issues

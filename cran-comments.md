@@ -13,6 +13,9 @@ This is the first submission of LEWIS.
 0 errors | 0 warnings | 1 note
 
 * This is a new submission.
+* "DAGs" in the Description is flagged as possibly misspelled. It is the
+  plural of DAG (directed acyclic graph), which is defined in the same
+  field.
 
 ## Notes for the CRAN team
 

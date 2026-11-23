@@ -5,7 +5,9 @@
 #' by a linear structural equation model. The errors may be Gaussian for
 #' some variables and non-Gaussian for others. LEWIS uses a Laplace error
 #' working model, a complexity prior on the DAG and a Laplace approximation
-#' of the marginal likelihood. A Metropolis-Hastings sampler draws DAGs,
+#' of the marginal likelihood. Under mild conditions, the posterior
+#' probability of the distribution equivalence class of the true DAG tends
+#' to one as the sample size grows. A Metropolis-Hastings sampler draws DAGs,
 #' and the draws are summarized by a restricted partially directed acyclic
 #' graph (RPDAG), a credible ball and posterior probabilities.
 #'
