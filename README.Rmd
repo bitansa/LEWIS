@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 [![R-CMD-check](https://github.com/bitansa/LEWIS/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/bitansa/LEWIS/actions/workflows/R-CMD-check.yaml)
 [![CRAN status](https://www.r-pkg.org/badges/version/LEWIS)](https://CRAN.R-project.org/package=LEWIS)
 [![License: GPL-2](https://img.shields.io/badge/License-GPL--2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html)
+[![DOI](https://zenodo.org/badge/1468277779.svg)](https://doi.org/10.5281/zenodo.24515125)
 <!-- badges: end -->
 
 LEWIS (Laplace Error Working model for Inference and Selection of DAG) is
@@ -326,6 +327,8 @@ The scripts call `lewis()` with `center = FALSE`. The folder is not part
 of the R package. The results of each dataset of the simulations, from
 which the scripts regenerate the figures and tables without rerunning the
 simulations, are archived on Zenodo, <https://doi.org/10.5281/zenodo.24514618>.
+The package is archived on Zenodo,
+<https://doi.org/10.5281/zenodo.24515125> (all versions).
 
 ## Citation
 
