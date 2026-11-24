@@ -46,9 +46,9 @@ rpdag(A, nG = 1)  # node 1 non-Gaussian: 1 -> 2 -> 3
 
 }
 \references{
-Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
-DAG selection for Bayesian Causal Discovery under general error
-distributions. Manuscript.
+Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026). Consistent
+DAG Selection for Bayesian Causal Discovery under Model
+Misspecification. Manuscript.
 
 Hoyer, P. O., Hyvarinen, A., Scheines, R., Spirtes, P., Ramsey, J.,
 Lacerda, G. and Shimizu, S. (2008). Causal discovery of linear acyclic

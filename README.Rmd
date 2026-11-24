@@ -323,15 +323,17 @@ figures and the tables of the paper. Its
 [README](https://github.com/bitansa/LEWIS/blob/main/reproducibility/README.md)
 explains what each script reproduces and the order in which to run them.
 The scripts call `lewis()` with `center = FALSE`. The folder is not part
-of the R package.
+of the R package. The results of each dataset of the simulations, from
+which the scripts regenerate the figures and tables without rerunning the
+simulations, are archived on Zenodo, <https://doi.org/10.5281/zenodo.24514618>.
 
 ## Citation
 
 If you use LEWIS, please cite the paper:
 
-Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
-DAG selection for Bayesian Causal Discovery under general error
-distributions. Manuscript.
+Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026). Consistent
+DAG Selection for Bayesian Causal Discovery under Model
+Misspecification. Manuscript.
 
 In R, `citation("LEWIS")` gives this reference.
 

@@ -26,9 +26,9 @@
 #'   `level` holds the level `alpha_sw / p`.
 #'
 #' @references
-#' Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
-#' DAG selection for Bayesian Causal Discovery under general error
-#' distributions. Manuscript.
+#' Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026). Consistent
+#' DAG Selection for Bayesian Causal Discovery under Model
+#' Misspecification. Manuscript.
 #'
 #' Shapiro, S. S. and Wilk, M. B. (1965). An analysis of variance test for
 #' normality (complete samples). Biometrika, 52, 591-611.
@@ -89,9 +89,9 @@ nongaussian_nodes <- function(X, dag, alpha_sw = 0.05, center = TRUE) {
 #'   `i -> j`. `D[i, j] = D[j, i] = 1` means the undirected edge `i - j`.
 #'
 #' @references
-#' Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
-#' DAG selection for Bayesian Causal Discovery under general error
-#' distributions. Manuscript.
+#' Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026). Consistent
+#' DAG Selection for Bayesian Causal Discovery under Model
+#' Misspecification. Manuscript.
 #'
 #' Hoyer, P. O., Hyvarinen, A., Scheines, R., Spirtes, P., Ramsey, J.,
 #' Lacerda, G. and Shimizu, S. (2008). Causal discovery of linear acyclic

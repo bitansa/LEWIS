@@ -39,9 +39,9 @@
 #' }
 #'
 #' @references
-#' Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
-#' DAG selection for Bayesian Causal Discovery under general error
-#' distributions. Manuscript.
+#' Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026). Consistent
+#' DAG Selection for Bayesian Causal Discovery under Model
+#' Misspecification. Manuscript.
 #'
 #' @seealso [lewis()]
 #'

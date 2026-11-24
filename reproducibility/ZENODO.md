@@ -5,7 +5,7 @@ from which the numbers, tables and figures of the paper are drawn. The
 results of each dataset of the simulations are too large for the
 repository. They are deposited on Zenodo:
 
-> DOI: to be added when the deposit is published.
+> <https://doi.org/10.5281/zenodo.24514618>
 
 The archive has one file per study. Each file holds paths relative to
 `reproducibility/`. To use it, download the files of the deposit. First

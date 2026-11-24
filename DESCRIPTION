@@ -5,9 +5,9 @@ Version: 0.1.0
 Authors@R: c(
     person("Anamitra", "Chaudhuri", role = "aut"),
     person("Anirban", "Bhattacharya", role = "aut"),
-    person("Yang", "Ni", role = "aut"),
     person("Bitan", "Sarkar", role = c("aut", "cre"),
            email = "bitansarkar010899@gmail.com"),
+    person("Yang", "Ni", role = "aut"),
     person("R Core Team", role = "cph",
            comment = "Shapiro-Wilk code from R's file swilk.c"),
     person("Roger", "Koenker", role = "cph",

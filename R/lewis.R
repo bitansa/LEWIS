@@ -178,9 +178,9 @@
 #' }
 #'
 #' @references
-#' Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026). Consistent
-#' DAG selection for Bayesian Causal Discovery under general error
-#' distributions. Manuscript.
+#' Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026). Consistent
+#' DAG Selection for Bayesian Causal Discovery under Model
+#' Misspecification. Manuscript.
 #'
 #' Geyer, C. J. (1992). Practical Markov chain Monte Carlo. Statistical
 #' Science, 7, 473-483.

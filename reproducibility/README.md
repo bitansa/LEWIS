@@ -3,9 +3,8 @@
 This folder reproduces the simulations, the real-data analysis, the figures
 and the tables of the paper
 
-> A. Chaudhuri, A. Bhattacharya, Y. Ni and B. Sarkar. Consistent DAG
-> selection for Bayesian causal discovery under general error
-> distributions.
+> A. Chaudhuri, A. Bhattacharya, B. Sarkar and Y. Ni. Consistent DAG
+> Selection for Bayesian Causal Discovery under Model Misspecification.
 
 with the method LEWIS of the R package `LEWIS` in this repository. Every
 study calls `LEWIS::lewis()` with `center = FALSE`, as in the paper. The
@@ -18,7 +17,8 @@ folder is not part of the R package build.
   numbers, tables and figures of the paper are drawn. Each of these files
   is smaller than 5 MB.
 - **Zenodo.** The results of each dataset of the simulations are too large
-  for the repository. They are deposited on Zenodo. `ZENODO.md` lists the
+  for the repository. They are deposited on Zenodo
+  (<https://doi.org/10.5281/zenodo.24514618>). `ZENODO.md` lists the
   files and explains how to unpack them so that the scripts find them.
   `make_zenodo_archive.sh` is the script that made the archive.
 - **TCGA data.** The real-data analysis uses public data of The Cancer

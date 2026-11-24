@@ -1,15 +1,15 @@
 bibentry(
   bibtype = "Unpublished",
-  title = "Consistent DAG selection for Bayesian Causal Discovery under general error distributions",
+  title = "Consistent DAG Selection for Bayesian Causal Discovery under Model Misspecification",
   author = c(person("Anamitra", "Chaudhuri"),
              person("Anirban", "Bhattacharya"),
-             person("Yang", "Ni"),
-             person("Bitan", "Sarkar")),
+             person("Bitan", "Sarkar"),
+             person("Yang", "Ni")),
   note = "Manuscript",
   year = "2026",
   textVersion = paste(
-    "Chaudhuri, A., Bhattacharya, A., Ni, Y. and Sarkar, B. (2026).",
-    "Consistent DAG selection for Bayesian Causal Discovery under general",
-    "error distributions. Manuscript."
+    "Chaudhuri, A., Bhattacharya, A., Sarkar, B. and Ni, Y. (2026).",
+    "Consistent DAG Selection for Bayesian Causal Discovery under Model",
+    "Misspecification. Manuscript."
   )
 )

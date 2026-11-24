@@ -23,9 +23,9 @@ class of the DAG. This class is represented by a restricted partially
 directed acyclic graph (RPDAG). An edge of the RPDAG is directed when the
 data determine its direction, and undirected otherwise.
 
-The method is described in Chaudhuri, Bhattacharya, Ni and Sarkar (2026),
-"Consistent DAG selection for Bayesian Causal Discovery under general error
-distributions", manuscript.
+The method is described in Chaudhuri, Bhattacharya, Sarkar and Ni (2026),
+"Consistent DAG Selection for Bayesian Causal Discovery under Model
+Misspecification", manuscript.
 
 ## A simulated example
 

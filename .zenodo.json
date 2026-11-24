@@ -1,0 +1,43 @@
+{
+  "title": "LEWIS: Consistent DAG Selection for Bayesian Causal Discovery",
+  "upload_type": "software",
+  "description": "R package for learning a directed acyclic graph (DAG) from observational data that follow a linear structural equation model in which each error may be Gaussian or a Gaussian scale mixture. LEWIS (Laplace Error Working model for Inference and Selection of DAG) uses a Laplace working likelihood at every node, a complexity prior on the graph and a Laplace approximation of the marginal likelihood, samples DAGs with a Metropolis-Hastings algorithm, and summarizes the draws by a point estimate of the distribution equivalence class, a credible ball and posterior probabilities of edges and of non-Gaussian errors. The repository includes the scripts that reproduce the simulations, figures and tables of the accompanying methods paper.",
+  "creators": [
+    {
+      "name": "Chaudhuri, Anamitra",
+      "affiliation": "Florida State University"
+    },
+    {
+      "name": "Bhattacharya, Anirban",
+      "affiliation": "Texas A&M University"
+    },
+    {
+      "name": "Sarkar, Bitan",
+      "affiliation": "Texas A&M University",
+      "orcid": "0009-0000-5178-5934"
+    },
+    {
+      "name": "Ni, Yang",
+      "affiliation": "The University of Texas at Austin",
+      "orcid": "0000-0003-0636-2363"
+    }
+  ],
+  "license": "GPL-2.0-only",
+  "keywords": [
+    "causal discovery",
+    "directed acyclic graphs",
+    "structural equation models",
+    "non-Gaussianity",
+    "Bayesian model selection",
+    "distribution equivalence",
+    "R package"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.24514618",
+      "relation": "isReferencedBy",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    }
+  ]
+}
